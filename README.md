@@ -79,6 +79,8 @@ You're stuck on a coding problem
 7. Paste key → **Save** → **Test Connection**
 8. Go to any LeetCode problem → click **"Stuck? Get a Hint"**
 
+> **Need help?** See the [step-by-step Installation Guide (PDF)](store-assets/HintCode_Installation_Guide.pdf) with annotated screenshots.
+
 ## Supported Platforms
 
 | Platform | Auto-Detect | Code Extraction |
