@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "HintCode",
+  "version": "1.0.0",
+  "description": "Smart Coding Hints for Students. Get progressive hints (not solutions) when stuck on coding problems.",
+  "permissions": ["storage", "activeTab", "sidePanel"],
+  "host_permissions": [
+    "https://leetcode.com/*",
+    "https://www.hackerrank.com/*",
+    "https://codeforces.com/*",
+    "https://www.codechef.com/*",
+    "https://www.geeksforgeeks.org/*",
+    "https://practice.geeksforgeeks.org/*",
+    "https://api.x.ai/*",
+    "https://api.groq.com/*"
+  ],
+  "background": {
+    "service_worker": "background/service-worker.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://leetcode.com/problems/*",
+        "https://www.hackerrank.com/challenges/*/problem*",
+        "https://codeforces.com/problemset/problem/*",
+        "https://codeforces.com/contest/*/problem/*",
+        "https://www.codechef.com/problems/*",
+        "https://www.geeksforgeeks.org/problems/*",
+        "https://practice.geeksforgeeks.org/problems/*"
+      ],
+      "js": [
+        "content-scripts/platforms/leetcode.js",
+        "content-scripts/platforms/hackerrank.js",
+        "content-scripts/platforms/codeforces.js",
+        "content-scripts/platforms/codechef.js",
+        "content-scripts/platforms/geeksforgeeks.js",
+        "content-scripts/detector.js",
+        "content-scripts/injector.js"
+      ],
+      "css": [],
+      "run_at": "document_idle"
+    }
+  ],
+  "side_panel": {
+    "default_path": "sidepanel/sidepanel.html"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "options_page": "options/options.html",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

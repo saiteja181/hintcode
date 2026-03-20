@@ -1,0 +1,14 @@
+{
+  "name": "hintcode",
+  "version": "1.0.0",
+  "description": "Smart Coding Hints for Students. A Chrome extension that helps students learn by giving progressive hints on coding platforms.",
+  "private": true,
+  "scripts": {
+    "build:css": "npx tailwindcss -i ./input.css -o ./styles/styles.css --minify",
+    "watch:css": "npx tailwindcss -i ./input.css -o ./styles/styles.css --watch"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  },
+  "license": "MIT"
+}

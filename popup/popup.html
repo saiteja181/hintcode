@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HintCode</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      width: 320px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #1a1a2e;
+      color: #e2e8f0;
+    }
+    .header {
+      background: linear-gradient(135deg, #7C3AED, #6D28D9);
+      padding: 16px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 16px;
+      font-weight: 700;
+      color: #fff;
+    }
+    .header p {
+      font-size: 11px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 2px;
+    }
+    .body { padding: 16px; }
+    .status-card {
+      background: #16213e;
+      border: 1px solid #2a2a4a;
+      border-radius: 10px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .status-row:last-child { margin-bottom: 0; }
+    .status-label { font-size: 12px; color: #94a3b8; }
+    .status-value { font-size: 12px; font-weight: 600; }
+    .status-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 6px;
+    }
+    .dot-green { background: #22c55e; }
+    .dot-red { background: #ef4444; }
+    .dot-yellow { background: #eab308; }
+    .btn {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 8px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #7C3AED, #6D28D9);
+      color: #fff;
+    }
+    .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+    .btn-secondary {
+      background: #16213e;
+      color: #e2e8f0;
+      border: 1px solid #2a2a4a;
+    }
+    .btn-secondary:hover { border-color: #7C3AED; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+    .footer {
+      text-align: center;
+      padding: 8px 16px 12px;
+      font-size: 10px;
+      color: #64748b;
+    }
+    .footer a { color: #7C3AED; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>HintCode</h1>
+    <p>Smart Coding Hints for Students</p>
+  </div>
+  <div class="body">
+    <div class="status-card">
+      <div class="status-row">
+        <span class="status-label">API Key</span>
+        <span class="status-value" id="apiKeyStatus">
+          <span class="status-dot dot-yellow" id="apiDot"></span>
+          <span id="apiText">Checking...</span>
+        </span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Platform</span>
+        <span class="status-value" id="platformStatus">Detecting...</span>
+      </div>
+      <div class="status-row">
+        <span class="status-label">Problem</span>
+        <span class="status-value" id="problemStatus" style="max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">-</span>
+      </div>
+    </div>
+    <button class="btn btn-primary" id="openPanelBtn" disabled>Open Hint Panel</button>
+    <button class="btn btn-secondary" id="settingsBtn">Settings</button>
+  </div>
+  <div class="footer">
+    <a href="https://github.com" target="_blank">HintCode</a> &mdash; Learn by thinking, not copying
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
